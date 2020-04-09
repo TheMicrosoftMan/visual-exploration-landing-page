@@ -1,0 +1,28 @@
+.cards .card1 {
+  background-color: #2196f3;
+  animation-delay: 5900ms;
+}
+.cards .card2 {
+  background-color: #00bcd4;
+  animation-delay: 6100ms;
+}
+.cards .card3 {
+  background-color: #009688;
+  animation-delay: 6300ms;
+}
+.cards .card4 {
+  background-color: #4caf50;
+  animation-delay: 6500ms;
+}
+.cards .card5 {
+  background-color: #8bc34a;
+  animation-delay: 6600ms;
+}
+.cards .card6 {
+  background-color: #ffeb3b;
+  animation-delay: 6800ms;
+}
+.cards .card7 {
+  background-color: #ff9800;
+  animation-delay: 7000ms;
+}

@@ -1,0 +1,388 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+
+.black-screen {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  position: fixed;
+  z-index: 1;
+
+  animation: start 1000ms 1 linear;
+  animation-delay: 2800ms;
+  animation-fill-mode: forwards;
+}
+
+.background-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/hero-cover.jpg") center no-repeat;
+  background-size: cover;
+
+  animation: scale-center 1200ms 1 ease;
+  animation-delay: 3000ms;
+  animation-fill-mode: forwards;
+}
+
+.exploration {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+}
+
+#home .exploration span {
+  color: #fff;
+  font-family: "SF Pro Display";
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 119px;
+  height: 0px;
+
+  z-index: 2;
+
+  overflow: hidden;
+
+  animation: scale-up-ver-bottom 800ms 1 ease;
+  /* animation-delay: 0s; */
+  animation-fill-mode: forwards;
+}
+
+.exploration-head {
+  display: flex;
+}
+
+#home .exploration .exploration-head .exploration1 {
+  animation-delay: 500ms;
+}
+
+#home .exploration .exploration-head .exploration2 {
+  margin-left: 1rem;
+  animation-delay: 800ms;
+}
+
+#home .exploration .exploration-subtitle {
+  color: #fff;
+  font-family: "SF Pro Display";
+  font-size: 32px;
+  line-height: 42px;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+
+  height: 0px;
+
+  overflow: hidden;
+
+  max-width: 550px;
+  animation: scale-up-ver-bottom 800ms 1 ease;
+  animation-delay: 1500ms;
+  animation-fill-mode: forwards;
+}
+
+.scroll-indicator {
+  box-sizing: border-box;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 10px solid rgba(255, 255, 255, 0.1);
+
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  visibility: hidden;
+
+  z-index: 2;
+
+  animation: scroll-indicator-animation 1200ms infinite ease;
+  animation-delay: 4400ms;
+}
+
+h1 {
+  font-size: 200px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 20px;
+  margin: 0;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Doha_skyline_in_the_morning_%2812544910974%29.jpg/1200px-Doha_skyline_in_the_morning_%2812544910974%29.jpg)
+    50% 50%;
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+@keyframes start {
+  0% {
+    background-color: #000;
+    /* z-index: 1; */
+  }
+
+  100% {
+    background-color: transparent;
+    /* z-index: -1; */
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes scale-up-ver-bottom {
+  0% {
+    height: 0px;
+  }
+  to {
+    height: 119px;
+  }
+}
+
+@keyframes scale-center {
+  0% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes scroll-indicator-animation {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+/* SECOND SECTION */
+
+#second {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  /* overflow: hidden; */
+  height: 100vh;
+  position: relative;
+  background-color: #fff;
+}
+
+.container-text {
+  background-image: url(../images/hero-cover.jpg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: #ffffff;
+
+  /* end size */
+  font-size: 17rem;
+  line-height: 17rem;
+
+  /* max size */
+  /* font-size: 172vw;
+  line-height: 110vw;
+  transform: scale(5); */
+
+  font-family: "SF Pro Display";
+  font-weight: 900;
+
+  animation: filling 4300ms 1 ease forwards;
+  animation-fill-mode: forwards;
+}
+
+.shooting-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "SF Pro Display";
+  max-width: 60vw;
+  margin: 1.5rem 0;
+}
+
+.shooting-block h2 {
+  text-align: inherit;
+  font-weight: 700;
+  font-size: 4rem;
+  max-width: 60vw;
+  color: #181219;
+
+  visibility: hidden;
+  height: 0px;
+
+  animation: start-from-bottom-opacity 1500ms 1 ease;
+  animation-delay: 4300ms;
+  animation-fill-mode: forwards;
+}
+
+.shooting-block p {
+  text-align: inherit;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  max-width: 50vw;
+  color: rgb(99, 93, 99);
+  margin: 1.5rem 0;
+
+  visibility: hidden;
+  height: 0px;
+
+  animation: start-from-bottom-opacity 700ms 1 ease;
+  animation-delay: 4800ms;
+  animation-fill-mode: forwards;
+}
+
+.shooting-block button {
+  background-color: #3b45f4;
+  color: #fff;
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  border: 1px solid #333bd8;
+  cursor: pointer;
+
+  visibility: hidden;
+  height: 0px;
+
+  animation: start-from-bottom-opacity 700ms 1 ease;
+  animation-delay: 5300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes filling {
+  0% {
+    font-size: 172vw;
+    line-height: 110vw;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  50% {
+    font-size: 17rem;
+    line-height: 17rem;
+
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  99% {
+    top: 0;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    position: relative;
+  }
+}
+
+@keyframes start-from-bottom-opacity {
+  0% {
+    visibility: visible;
+    height: 100%;
+    transform: translate(0, 50%);
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    height: 100%;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* CARDS BLOCK */
+
+.cards {
+  display: flex;
+}
+
+.cards .card {
+  display: flex;
+  border-radius: 1rem;
+  margin: 1rem;
+
+  width: 200px;
+  height: 0px;
+
+  animation: start-card-from-bottom-opacity 2000ms 1 ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes start-card-from-bottom-opacity {
+  0% {
+    visibility: visible;
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    height: 350px;
+    opacity: 1;
+  }
+}
+
+/* ACTIONS BLOCK */
+
+.hide-section {
+  animation: hide-section-animation 2000ms 1 ease;
+  animation-fill-mode: forwards;
+}
+
+.show-section {
+  animation: show-section-animation 1000ms 1 ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide-section-animation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes show-section-animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
